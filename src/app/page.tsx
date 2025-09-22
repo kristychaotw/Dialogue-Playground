@@ -176,9 +176,7 @@ const roles: Role[] = [
   },
 ];
 
-// 聖杯皇后風格：低門檻、中性、可直接續寫的句首
-// logic/sentenceStarters.ts
-export const getSentenceStarters = (
+const getSentenceStarters = (
   topicId: string,
   mode: "play" | "respond"
 ): string[] => {
@@ -423,7 +421,6 @@ export default function PerspectivePractice() {
     return (
       <div className="h-screen bg-stone-50 p-3">
         <div className="max-w-2xl mx-auto space-y-2">
-          {/* Practice Card Output */}
           <Card
             className="bg-white border-0 shadow-sm rounded-2xl overflow-hidden"
             id="practice-output"
@@ -440,7 +437,6 @@ export default function PerspectivePractice() {
             </CardHeader>
             <CardContent className="p-3 space-y-2">
               <div className="space-y-2">
-                {/* 2. 主題 - 第二層級 */}
                 <div>
                   <h3 className="text-base font-medium text-stone-700 mb-2 tracking-wide uppercase">
                     討論主題
@@ -451,7 +447,6 @@ export default function PerspectivePractice() {
                 </div>
 
                 <Separator className="bg-stone-200" />
-                {/* 1. 回應 - 最高層級 */}
                 <div>
                   <h3 className="text-lg font-medium text-stone-800 mb-3 tracking-wide">
                     {selectedMode === "play"
@@ -475,7 +470,6 @@ export default function PerspectivePractice() {
 
                 <Separator className="bg-stone-200" />
 
-                {/* 3. 角色 - 第三層級 */}
                 <div>
                   <p className="text-stone-600 font-medium mb-2">卡片角色</p>
                   <p className="text-xs font-medium text-stone-500 mb-1 tracking-wide uppercase">
@@ -494,7 +488,6 @@ export default function PerspectivePractice() {
                   </div>
                 </div>
 
-                {/* 4. 想法 - 最低層級 (只在回應模式顯示) */}
                 {selectedMode === "respond" && (
                   <div>
                     <h3 className="text-xs font-medium text-stone-500 mb-1 tracking-wide uppercase">
@@ -517,7 +510,6 @@ export default function PerspectivePractice() {
             </CardContent>
           </Card>
 
-          {/* Action Buttons */}
           <div className="flex gap-4 justify-center">
             <Button
               onClick={drawCard}
@@ -548,10 +540,8 @@ export default function PerspectivePractice() {
   return (
     <div className="h-screen bg-stone-50 p-3">
       <div className="max-w-2xl mx-auto space-y-2">
-        {/* Topic and Role Cards */}
         {currentCard && (
           <div className="space-y-2">
-            {/* Topic Card */}
             <Card className="bg-white border-0 shadow-sm rounded-2xl">
               <CardContent className="p-3">
                 <div className="flex items-start justify-between mb-2">
@@ -574,7 +564,6 @@ export default function PerspectivePractice() {
               </CardContent>
             </Card>
 
-            {/* Role Card */}
             <Card className="bg-white border-0 shadow-sm rounded-2xl">
               <CardContent className="p-3 space-y-2">
                 <h3 className="text-sm font-medium text-stone-500 tracking-wide uppercase">
@@ -606,7 +595,6 @@ export default function PerspectivePractice() {
           </div>
         )}
 
-        {/* Mode Selection */}
         {phase === "card-drawn" && (
           <Card className="bg-white border-0 shadow-sm rounded-2xl">
             <CardHeader className="pb-3">

@@ -1,13 +1,12 @@
-// src/hooks/usePreviousSentence.ts
 import { useMemo, useState } from "react";
 import { isHighTension } from "../logic/tension";
 
 export type PreviousSource = "user" | "role-seed" | "topic-starter" | "blank";
 
 export function usePreviousSentence(params: {
-  userSentence: string | null; // 從外部抓到的上一句（可為 null）
-  roleSeed: string; // 角色 seed_line
-  topicStarter: string; // 從 getSentenceStarters(topicId,"respond")[0] 取一條
+  userSentence: string | null;
+  roleSeed: string;
+  topicStarter: string;
 }) {
   const { userSentence, roleSeed, topicStarter } = params;
   const [source, setSource] = useState<PreviousSource>("user");
