@@ -730,24 +730,6 @@ export default function PerspectivePractice() {
                       {currentCard.topic.title}
                     </span>
                   </div>
-                  <div>
-                    <span className="text-stone-500 font-medium">角色：</span>
-                    <span className="text-stone-700 font-light">
-                      {currentCard.role.label}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-stone-500 font-medium">想法：</span>
-                    <span className="text-stone-700 italic font-light">
-                      「{currentCard.role.seed_line}」
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-stone-500 font-medium">態度：</span>
-                    <span className="text-stone-700 font-light">
-                      {currentCard.role.attitude}
-                    </span>
-                  </div>
                 </div>
               </CardContent>
             </Card>
